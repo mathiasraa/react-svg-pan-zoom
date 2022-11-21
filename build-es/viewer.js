@@ -459,7 +459,7 @@ var ReactSVGPanZoom = /*#__PURE__*/function (_React$Component) {
         }
       }, /*#__PURE__*/React.createElement("div", {
         style: {
-          transform: toSVG(value)
+          transform: "translate3d(".concat(value.e, ", ").concat(value.f, ")")
         }
       }, /*#__PURE__*/React.createElement("svg", {
         width: value.SVGWidth,
