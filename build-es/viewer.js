@@ -359,6 +359,7 @@ var ReactSVGPanZoom = /*#__PURE__*/function (_React$Component) {
         cursor: cursor,
         touchAction: touchAction
       };
+      console.log(value);
       return /*#__PURE__*/React.createElement("div", {
         style: _objectSpread({
           position: "relative",
@@ -459,7 +460,7 @@ var ReactSVGPanZoom = /*#__PURE__*/function (_React$Component) {
         }
       }, /*#__PURE__*/React.createElement("div", {
         style: {
-          transform: "translate3d(".concat(value.e, ", ").concat(value.f, ", 0)")
+          transform: "translate3d(".concat(value.e, "px, ").concat(value.f, "px, 0px) scale3d(").concat(value.a, ", ").concat(value.a, ", 1)")
         }
       }, /*#__PURE__*/React.createElement("svg", {
         width: value.SVGWidth,

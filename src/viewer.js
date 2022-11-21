@@ -377,6 +377,8 @@ export default class ReactSVGPanZoom extends React.Component {
 
     const style = { display: "block", cursor, touchAction };
 
+    console.log(value);
+
     return (
       <div
         style={{
@@ -513,7 +515,11 @@ export default class ReactSVGPanZoom extends React.Component {
             this.handleViewerEvent(event);
           }}
         >
-          <div style={{ transform: `translate3d(${value.e}, ${value.f}, 0)` }}>
+          <div
+            style={{
+              transform: `translate3d(${value.e}px, ${value.f}px, 0px) scale3d(${value.a}, ${value.a}, 1)`,
+            }}
+          >
             <svg width={value.SVGWidth} height={value.SVGHeight}>
               <rect
                 fill={props.background}
