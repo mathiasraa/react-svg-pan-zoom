@@ -387,131 +387,133 @@ export default class ReactSVGPanZoom extends React.Component {
         }}
         className={this.props.className}
       >
-        <div style={{ transform: `${toSVG(value)}` }}>
-          <svg
-            ref={(ViewerDOM) => (this.ViewerDOM = ViewerDOM)}
-            width={value.viewerWidth}
-            height={value.viewerHeight}
-            style={style}
-            onMouseDown={(event) => {
-              let nextValue = onMouseDown(
-                event,
-                this.ViewerDOM,
-                this.getTool(),
-                this.getValue(),
-                this.props
-              );
-              if (this.getValue() !== nextValue) this.setValue(nextValue);
-              this.handleViewerEvent(event);
-            }}
-            onMouseMove={(event) => {
-              let { left, top } = this.ViewerDOM.getBoundingClientRect();
-              let x = event.clientX - Math.round(left);
-              let y = event.clientY - Math.round(top);
+        <div
+          ref={(ViewerDOM) => (this.ViewerDOM = ViewerDOM)}
+          style={{
+            transform: `${toSVG(value)}`,
+            width: value.viewerWidth,
+            height: value.viewerHeight,
+          }}
+          onMouseDown={(event) => {
+            let nextValue = onMouseDown(
+              event,
+              this.ViewerDOM,
+              this.getTool(),
+              this.getValue(),
+              this.props
+            );
+            if (this.getValue() !== nextValue) this.setValue(nextValue);
+            this.handleViewerEvent(event);
+          }}
+          onMouseMove={(event) => {
+            let { left, top } = this.ViewerDOM.getBoundingClientRect();
+            let x = event.clientX - Math.round(left);
+            let y = event.clientY - Math.round(top);
 
-              let nextValue = onMouseMove(
-                event,
-                this.ViewerDOM,
-                this.getTool(),
-                this.getValue(),
-                this.props,
-                { x, y }
-              );
-              if (this.getValue() !== nextValue) this.setValue(nextValue);
-              this.setState({ pointerX: x, pointerY: y });
-              this.handleViewerEvent(event);
-            }}
-            onMouseUp={(event) => {
-              let nextValue = onMouseUp(
-                event,
-                this.ViewerDOM,
-                this.getTool(),
-                this.getValue(),
-                this.props
-              );
-              if (this.getValue() !== nextValue) this.setValue(nextValue);
-              this.handleViewerEvent(event);
-            }}
-            onClick={(event) => {
-              this.handleViewerEvent(event);
-            }}
-            onDoubleClick={(event) => {
-              let nextValue = onDoubleClick(
-                event,
-                this.ViewerDOM,
-                this.getTool(),
-                this.getValue(),
-                this.props
-              );
-              if (this.getValue() !== nextValue) this.setValue(nextValue);
-              this.handleViewerEvent(event);
-            }}
-            onMouseEnter={(event) => {
-              if (detectTouch()) return;
-              let nextValue = onMouseEnterOrLeave(
-                event,
-                this.ViewerDOM,
-                this.getTool(),
-                this.getValue(),
-                this.props
-              );
-              if (this.getValue() !== nextValue) this.setValue(nextValue);
-            }}
-            onMouseLeave={(event) => {
-              let nextValue = onMouseEnterOrLeave(
-                event,
-                this.ViewerDOM,
-                this.getTool(),
-                this.getValue(),
-                this.props
-              );
-              if (this.getValue() !== nextValue) this.setValue(nextValue);
-            }}
-            onTouchStart={(event) => {
-              let nextValue = onTouchStart(
-                event,
-                this.ViewerDOM,
-                this.getTool(),
-                this.getValue(),
-                this.props
-              );
-              if (this.getValue() !== nextValue) this.setValue(nextValue);
-              this.handleViewerEvent(event);
-            }}
-            onTouchMove={(event) => {
-              let nextValue = onTouchMove(
-                event,
-                this.ViewerDOM,
-                this.getTool(),
-                this.getValue(),
-                this.props
-              );
-              if (this.getValue() !== nextValue) this.setValue(nextValue);
-              this.handleViewerEvent(event);
-            }}
-            onTouchEnd={(event) => {
-              let nextValue = onTouchEnd(
-                event,
-                this.ViewerDOM,
-                this.getTool(),
-                this.getValue(),
-                this.props
-              );
-              if (this.getValue() !== nextValue) this.setValue(nextValue);
-              this.handleViewerEvent(event);
-            }}
-            onTouchCancel={(event) => {
-              let nextValue = onTouchCancel(
-                event,
-                this.ViewerDOM,
-                this.getTool(),
-                this.getValue(),
-                this.props
-              );
-              if (this.getValue() !== nextValue) this.setValue(nextValue);
-              this.handleViewerEvent(event);
-            }}
-          >
+            let nextValue = onMouseMove(
+              event,
+              this.ViewerDOM,
+              this.getTool(),
+              this.getValue(),
+              this.props,
+              { x, y }
+            );
+            if (this.getValue() !== nextValue) this.setValue(nextValue);
+            this.setState({ pointerX: x, pointerY: y });
+            this.handleViewerEvent(event);
+          }}
+          onMouseUp={(event) => {
+            let nextValue = onMouseUp(
+              event,
+              this.ViewerDOM,
+              this.getTool(),
+              this.getValue(),
+              this.props
+            );
+            if (this.getValue() !== nextValue) this.setValue(nextValue);
+            this.handleViewerEvent(event);
+          }}
+          onClick={(event) => {
+            this.handleViewerEvent(event);
+          }}
+          onDoubleClick={(event) => {
+            let nextValue = onDoubleClick(
+              event,
+              this.ViewerDOM,
+              this.getTool(),
+              this.getValue(),
+              this.props
+            );
+            if (this.getValue() !== nextValue) this.setValue(nextValue);
+            this.handleViewerEvent(event);
+          }}
+          onMouseEnter={(event) => {
+            if (detectTouch()) return;
+            let nextValue = onMouseEnterOrLeave(
+              event,
+              this.ViewerDOM,
+              this.getTool(),
+              this.getValue(),
+              this.props
+            );
+            if (this.getValue() !== nextValue) this.setValue(nextValue);
+          }}
+          onMouseLeave={(event) => {
+            let nextValue = onMouseEnterOrLeave(
+              event,
+              this.ViewerDOM,
+              this.getTool(),
+              this.getValue(),
+              this.props
+            );
+            if (this.getValue() !== nextValue) this.setValue(nextValue);
+          }}
+          onTouchStart={(event) => {
+            let nextValue = onTouchStart(
+              event,
+              this.ViewerDOM,
+              this.getTool(),
+              this.getValue(),
+              this.props
+            );
+            if (this.getValue() !== nextValue) this.setValue(nextValue);
+            this.handleViewerEvent(event);
+          }}
+          onTouchMove={(event) => {
+            let nextValue = onTouchMove(
+              event,
+              this.ViewerDOM,
+              this.getTool(),
+              this.getValue(),
+              this.props
+            );
+            if (this.getValue() !== nextValue) this.setValue(nextValue);
+            this.handleViewerEvent(event);
+          }}
+          onTouchEnd={(event) => {
+            let nextValue = onTouchEnd(
+              event,
+              this.ViewerDOM,
+              this.getTool(),
+              this.getValue(),
+              this.props
+            );
+            if (this.getValue() !== nextValue) this.setValue(nextValue);
+            this.handleViewerEvent(event);
+          }}
+          onTouchCancel={(event) => {
+            let nextValue = onTouchCancel(
+              event,
+              this.ViewerDOM,
+              this.getTool(),
+              this.getValue(),
+              this.props
+            );
+            if (this.getValue() !== nextValue) this.setValue(nextValue);
+            this.handleViewerEvent(event);
+          }}
+        >
+          <svg style={style}>
             <rect
               fill={props.background}
               x={0}

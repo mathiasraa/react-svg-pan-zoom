@@ -367,16 +367,14 @@ var ReactSVGPanZoom = /*#__PURE__*/function (_React$Component) {
         }, props.style),
         className: this.props.className
       }, /*#__PURE__*/React.createElement("div", {
-        style: {
-          transform: "".concat(toSVG(value))
-        }
-      }, /*#__PURE__*/React.createElement("svg", {
         ref: function ref(ViewerDOM) {
           return _this2.ViewerDOM = ViewerDOM;
         },
-        width: value.viewerWidth,
-        height: value.viewerHeight,
-        style: style,
+        style: {
+          transform: "".concat(toSVG(value)),
+          width: value.viewerWidth,
+          height: value.viewerHeight
+        },
         onMouseDown: function onMouseDown(event) {
           var nextValue = _onMouseDown(event, _this2.ViewerDOM, _this2.getTool(), _this2.getValue(), _this2.props);
 
@@ -460,6 +458,8 @@ var ReactSVGPanZoom = /*#__PURE__*/function (_React$Component) {
 
           _this2.handleViewerEvent(event);
         }
+      }, /*#__PURE__*/React.createElement("svg", {
+        style: style
       }, /*#__PURE__*/React.createElement("rect", {
         fill: props.background,
         x: 0,
