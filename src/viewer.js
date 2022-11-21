@@ -513,80 +513,83 @@ export default class ReactSVGPanZoom extends React.Component {
             this.handleViewerEvent(event);
           }}
         >
-          <svg width={value.SVGWidth} height={value.SVGHeight}>
-            <rect
-              fill={props.background}
-              x={0}
-              y={0}
-              width={value.viewerWidth}
-              height={value.viewerHeight}
-              style={{ pointerEvents: "none" }}
-            />
-
-            <g
-              transform={toSVG(value)}
-              style={blockChildEvents ? { pointerEvents: "none" } : {}}
-            >
+          <div style={{ transform: toSVG(value) }}>
+            <svg width={value.SVGWidth} height={value.SVGHeight}>
               <rect
-                fill={this.props.SVGBackground}
-                style={this.props.SVGStyle}
-                x={value.SVGMinX || 0}
-                y={value.SVGMinY || 0}
+                fill={props.background}
+                x={0}
+                y={0}
+                width={value.viewerWidth}
+                height={value.viewerHeight}
+                style={{ pointerEvents: "none" }}
+              />
+
+              <g
+                style={blockChildEvents ? { pointerEvents: "none" } : {}}
                 width={value.SVGWidth}
                 height={value.SVGHeight}
-              />
-              <g>{props.children.props.children}</g>
-            </g>
-
-            {!(
-              [TOOL_NONE, TOOL_AUTO].indexOf(tool) >= 0 &&
-              props.detectAutoPan &&
-              value.focus
-            ) ? null : (
-              <g style={{ pointerEvents: "none" }}>
-                {!(pointerY <= 20) ? null : (
-                  <BorderGradient
-                    direction={POSITION_TOP}
-                    width={value.viewerWidth}
-                    height={value.viewerHeight}
-                  />
-                )}
-
-                {!(value.viewerWidth - pointerX <= 20) ? null : (
-                  <BorderGradient
-                    direction={POSITION_RIGHT}
-                    width={value.viewerWidth}
-                    height={value.viewerHeight}
-                  />
-                )}
-
-                {!(value.viewerHeight - pointerY <= 20) ? null : (
-                  <BorderGradient
-                    direction={POSITION_BOTTOM}
-                    width={value.viewerWidth}
-                    height={value.viewerHeight}
-                  />
-                )}
-
-                {!(value.focus && pointerX <= 20) ? null : (
-                  <BorderGradient
-                    direction={POSITION_LEFT}
-                    width={value.viewerWidth}
-                    height={value.viewerHeight}
-                  />
-                )}
+              >
+                <rect
+                  fill={this.props.SVGBackground}
+                  style={this.props.SVGStyle}
+                  x={value.SVGMinX || 0}
+                  y={value.SVGMinY || 0}
+                  width={value.SVGWidth}
+                  height={value.SVGHeight}
+                />
+                <g>{props.children.props.children}</g>
               </g>
-            )}
 
-            {!(value.mode === MODE_ZOOMING) ? null : (
-              <Selection
-                startX={value.startX}
-                startY={value.startY}
-                endX={value.endX}
-                endY={value.endY}
-              />
-            )}
-          </svg>
+              {!(
+                [TOOL_NONE, TOOL_AUTO].indexOf(tool) >= 0 &&
+                props.detectAutoPan &&
+                value.focus
+              ) ? null : (
+                <g style={{ pointerEvents: "none" }}>
+                  {!(pointerY <= 20) ? null : (
+                    <BorderGradient
+                      direction={POSITION_TOP}
+                      width={value.viewerWidth}
+                      height={value.viewerHeight}
+                    />
+                  )}
+
+                  {!(value.viewerWidth - pointerX <= 20) ? null : (
+                    <BorderGradient
+                      direction={POSITION_RIGHT}
+                      width={value.viewerWidth}
+                      height={value.viewerHeight}
+                    />
+                  )}
+
+                  {!(value.viewerHeight - pointerY <= 20) ? null : (
+                    <BorderGradient
+                      direction={POSITION_BOTTOM}
+                      width={value.viewerWidth}
+                      height={value.viewerHeight}
+                    />
+                  )}
+
+                  {!(value.focus && pointerX <= 20) ? null : (
+                    <BorderGradient
+                      direction={POSITION_LEFT}
+                      width={value.viewerWidth}
+                      height={value.viewerHeight}
+                    />
+                  )}
+                </g>
+              )}
+
+              {!(value.mode === MODE_ZOOMING) ? null : (
+                <Selection
+                  startX={value.startX}
+                  startY={value.startY}
+                  endX={value.endX}
+                  endY={value.endY}
+                />
+              )}
+            </svg>
+          </div>
         </div>
 
         {props.toolbarProps.position === POSITION_NONE ? null : (

@@ -3458,6 +3458,10 @@ var ReactSVGPanZoom = /*#__PURE__*/function (_React$Component) {
 
           _this2.handleViewerEvent(event);
         }
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        style: {
+          transform: (0, _transformationMatrix.toSVG)(value)
+        }
       }, /*#__PURE__*/_react.default.createElement("svg", {
         width: value.SVGWidth,
         height: value.SVGHeight
@@ -3471,10 +3475,11 @@ var ReactSVGPanZoom = /*#__PURE__*/function (_React$Component) {
           pointerEvents: "none"
         }
       }), /*#__PURE__*/_react.default.createElement("g", {
-        transform: (0, _transformationMatrix.toSVG)(value),
         style: blockChildEvents ? {
           pointerEvents: "none"
-        } : {}
+        } : {},
+        width: value.SVGWidth,
+        height: value.SVGHeight
       }, /*#__PURE__*/_react.default.createElement("rect", {
         fill: this.props.SVGBackground,
         style: this.props.SVGStyle,
@@ -3507,7 +3512,7 @@ var ReactSVGPanZoom = /*#__PURE__*/function (_React$Component) {
         startY: value.startY,
         endX: value.endX,
         endY: value.endY
-      }))), props.toolbarProps.position === _constants.POSITION_NONE ? null : /*#__PURE__*/_react.default.createElement(CustomToolbar, _extends({}, this.props.toolbarProps, {
+      })))), props.toolbarProps.position === _constants.POSITION_NONE ? null : /*#__PURE__*/_react.default.createElement(CustomToolbar, _extends({}, this.props.toolbarProps, {
         value: value,
         onChangeValue: function onChangeValue(value) {
           return _this2.setValue(value);
