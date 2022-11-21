@@ -3459,8 +3459,8 @@ var ReactSVGPanZoom = /*#__PURE__*/function (_React$Component) {
           _this2.handleViewerEvent(event);
         }
       }, /*#__PURE__*/_react.default.createElement("svg", {
-        width: value.viewerWidth,
-        height: value.viewerHeight
+        width: value.SVGWidth,
+        height: value.SVGHeight
       }, /*#__PURE__*/_react.default.createElement("rect", {
         fill: props.background,
         x: 0,
