@@ -513,7 +513,7 @@ export default class ReactSVGPanZoom extends React.Component {
             this.handleViewerEvent(event);
           }}
         >
-          <div style={{ transform: `translate3d(${value.e}, ${value.f})` }}>
+          <div style={{ transform: `translate3d(${value.e}, ${value.f}, 0)` }}>
             <svg width={value.SVGWidth} height={value.SVGHeight}>
               <rect
                 fill={props.background}
