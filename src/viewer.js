@@ -317,9 +317,9 @@ export default class ReactSVGPanZoom extends React.Component {
       this.setValue(nextValue);
     }
 
-    // if (this.autoPanIsRunning) {
-    //   requestAnimationFrame(this.autoPanLoop);
-    // }
+    if (this.autoPanIsRunning) {
+      requestAnimationFrame(this.autoPanLoop);
+    }
   }
 
   onWheel(event) {
@@ -389,10 +389,13 @@ export default class ReactSVGPanZoom extends React.Component {
       >
         <div
           ref={(ViewerDOM) => (this.ViewerDOM = ViewerDOM)}
+          width={value.viewerWidth}
+          height={value.viewerHeight}
           style={{
             transform: `${toSVG(value)}`,
             width: value.viewerWidth,
             height: value.viewerHeight,
+            ...style,
           }}
           onMouseDown={(event) => {
             let nextValue = onMouseDown(
@@ -513,7 +516,7 @@ export default class ReactSVGPanZoom extends React.Component {
             this.handleViewerEvent(event);
           }}
         >
-          <svg style={style}>
+          <svg width={value.viewerWidth} height={value.viewerHeight}>
             <rect
               fill={props.background}
               x={0}
