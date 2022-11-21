@@ -524,7 +524,7 @@ export default class ReactSVGPanZoom extends React.Component {
             />
 
             <g
-              // transform={toSVG(value)}
+              transform={toSVG(value)}
               style={blockChildEvents ? { pointerEvents: "none" } : {}}
             >
               <rect

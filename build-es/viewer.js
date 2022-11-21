@@ -470,7 +470,7 @@ var ReactSVGPanZoom = /*#__PURE__*/function (_React$Component) {
           pointerEvents: "none"
         }
       }), /*#__PURE__*/React.createElement("g", {
-        // transform={toSVG(value)}
+        transform: toSVG(value),
         style: blockChildEvents ? {
           pointerEvents: "none"
         } : {}
