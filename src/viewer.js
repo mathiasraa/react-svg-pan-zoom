@@ -387,7 +387,7 @@ export default class ReactSVGPanZoom extends React.Component {
         }}
         className={this.props.className}
       >
-        <div style={`transform: ${toSVG(value)}`}>
+        <div style={{ transform: `${toSVG(value)}` }}>
           <svg
             ref={(ViewerDOM) => (this.ViewerDOM = ViewerDOM)}
             width={value.viewerWidth}

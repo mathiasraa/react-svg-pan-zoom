@@ -367,7 +367,9 @@ var ReactSVGPanZoom = /*#__PURE__*/function (_React$Component) {
         }, props.style),
         className: this.props.className
       }, /*#__PURE__*/React.createElement("div", {
-        style: "transform: ".concat(toSVG(value))
+        style: {
+          transform: "".concat(toSVG(value))
+        }
       }, /*#__PURE__*/React.createElement("svg", {
         ref: function ref(ViewerDOM) {
           return _this2.ViewerDOM = ViewerDOM;
