@@ -316,11 +316,10 @@ var ReactSVGPanZoom = /*#__PURE__*/function (_React$Component) {
 
       if (this.getValue() !== nextValue) {
         this.setValue(nextValue);
-      }
+      } // if (this.autoPanIsRunning) {
+      //   requestAnimationFrame(this.autoPanLoop);
+      // }
 
-      if (this.autoPanIsRunning) {
-        requestAnimationFrame(this.autoPanLoop);
-      }
     }
   }, {
     key: "onWheel",
@@ -371,10 +370,7 @@ var ReactSVGPanZoom = /*#__PURE__*/function (_React$Component) {
         ref: function ref(ViewerDOM) {
           return _this2.ViewerDOM = ViewerDOM;
         },
-        width: value.viewerWidth,
-        height: value.viewerHeight,
         style: _objectSpread({
-          transform: "".concat(toSVG(value)),
           width: value.viewerWidth,
           height: value.viewerHeight
         }, style),
@@ -462,8 +458,8 @@ var ReactSVGPanZoom = /*#__PURE__*/function (_React$Component) {
           _this2.handleViewerEvent(event);
         }
       }, /*#__PURE__*/React.createElement("svg", {
-        width: value.SVGWidth,
-        height: value.SVGHeight
+        width: value.viewerWidth,
+        height: value.viewerHeight
       }, /*#__PURE__*/React.createElement("rect", {
         fill: props.background,
         x: 0,
