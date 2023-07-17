@@ -5,7 +5,8 @@
 [![Test](https://github.com/chrvadala/react-svg-pan-zoom/workflows/Test/badge.svg)](https://github.com/chrvadala/react-svg-pan-zoom/actions)
 [![npm](https://img.shields.io/npm/v/react-svg-pan-zoom.svg?maxAge=2592000?style=plastic)](https://www.npmjs.com/package/react-svg-pan-zoom)
 [![Downloads](https://img.shields.io/npm/dm/react-svg-pan-zoom.svg)](https://www.npmjs.com/package/react-svg-pan-zoom)
-[![Donate](https://img.shields.io/badge/donate-PayPal-green.svg)](https://www.paypal.me/chrvadala/25)
+[![Donate](https://img.shields.io/badge/donate-GithubSponsor-green.svg)](https://github.com/sponsors/chrvadala)
+
 
 
 <!-- BEGIN_SECTION_SKIPPED_ONLINE -->
@@ -23,12 +24,12 @@ This component can work in four different modes depending on the selected tool:
 - With the tool **auto** the user can interact with SVG child elements, perform *pan* (dragging the image), *zoom in* (double click), *zoom out* (double click + shift).
 
 ## Documentation
-- [Getting Started](./docs/getting-started.md#props)
-- [Props](./docs/documentation.md#props)
-- [Methods](./docs/documentation.md#methods)
-- [API](./docs/documentation.md#api)
-- [Autosizer viewer](./docs/autosizer-viewer.md)
-- [SVG dynamically loaded](./docs/svg-dynamically-loaded.md)
+- [Getting Started](https://github.com/chrvadala/react-svg-pan-zoom/blob/main/docs/getting-started.md#props)
+- [Props](https://github.com/chrvadala/react-svg-pan-zoom/blob/main/docs/documentation.md#props)
+- [Methods](https://github.com/chrvadala/react-svg-pan-zoom/blob/main/docs/documentation.md#methods)
+- [API](https://github.com/chrvadala/react-svg-pan-zoom/blob/main/docs/documentation.md#api)
+- [Autosizer viewer](https://github.com/chrvadala/react-svg-pan-zoom/blob/main/docs/autosizer-viewer.md)
+- [SVG dynamically loaded](https://github.com/chrvadala/react-svg-pan-zoom/blob/main/docs/svg-dynamically-loaded.md)
 
 <!-- BEGIN_SECTION_SKIPPED_ONLINE -->
 ## Install
@@ -54,7 +55,7 @@ yarn add react-svg-pan-zoom
 - [**CodeSandbox**](https://codesandbox.io/s/1v19809803) - This is a CodeSandbox demo.
 
 ## Changelog
-- **v2.0** - Project refactor. Follow [this guide](./docs/migrate-from-v1-to-v2.md) for migration instructions.
+- **v2.0** - Project refactor. Follow [this guide](https://github.com/chrvadala/react-svg-pan-zoom/blob/main/docs/migrate-from-v1-to-v2.md) for migration instructions.
 - **v2.1** - Adds `setPointOnViewerCenter`, `reset` methods and `className`, `style` props
 - **v2.2** - Introduces tool `auto`, improves default toolbar
 - **v2.3** - Adds touch events support
@@ -73,7 +74,7 @@ yarn add react-svg-pan-zoom
 - **v2.16** - Adds `onPan` and `onZoom` callbacks, Upgrade deps, Fixes boundaries feature
 - **v2.17** - Upgrades deps
 - **v2.18** - Introduces `toolbarProps.SVGAlignX` and `toolbarProps.SVGAlignY` props.  Adds alignment configuration in `fitToViewer(SVGAlignX = "left", SVGAlignY = "top")` method ([#120](https://github.com/chrvadala/react-svg-pan-zoom/pull/120)). Upgrades deps.
-- **v3.0** - Upgrades to babel 7 and storybook 4; Introduces `<UncontrolledReactSVGPanZoom />` component and makes `<ReactSVGPanZoom>` a stateless component (except for some optimizations); Moves props related to miniature and toolbar, respectively into the `miniatureProp` and `toolbarProp` props. **Migration guide is available [here](./docs/migrate-from-v2-to-v3.md)**.
+- **v3.0** - Upgrades to babel 7 and storybook 4; Introduces `<UncontrolledReactSVGPanZoom />` component and makes `<ReactSVGPanZoom>` a stateless component (except for some optimizations); Moves props related to miniature and toolbar, respectively into the `miniatureProp` and `toolbarProp` props. **Migration guide is available [here](https://github.com/chrvadala/react-svg-pan-zoom/blob/main/docs/migrate-from-v2-to-v3.md)**.
 - **v3.1** - Upgrades to storybook 5 and [transformation-matrix 2](https://github.com/chrvadala/transformation-matrix); Fixes some Babel configuration issues
 - **v3.2** - Upgrades deps
 - **v3.3** - Adds SVG viewbox prop support [#150](https://github.com/chrvadala/react-svg-pan-zoom/pull/150)
@@ -85,11 +86,12 @@ yarn add react-svg-pan-zoom
 - **v3.9** - Exports toolbar icons and buttons [#192](https://github.com/chrvadala/react-svg-pan-zoom/pull/192)
 - **3.10** - Upgrades deps; Migrates to React 17 and Storybook 6; Updates examples and docs to React hooks
 - **3.11** - Migrates from yarn to npm; Makes use of [chrvadala/github-actions](https://github.com/chrvadala/github-actions); Updates deps;
+- **3.12** - Migrates to gh-sponsor; Improves docs; Deprecates v1 migration guide; Upgrades deps;
 
 ## Some projects using react-svg-pan-zoom
 - [**Learn Anything**](https://github.com/learn-anything/learn-anything)
 - [**React Planner**](https://github.com/cvdlab/react-planner)
-- [Python extension for vscode](https://github.com/microsoft/vscode-python)
+- [**Python extension for vscode**](https://github.com/microsoft/vscode-python)
 - [**Others...**](https://github.com/chrvadala/react-svg-pan-zoom/network/dependents)
 - Pull request your project!
 
@@ -115,3 +117,4 @@ yarn add react-svg-pan-zoom
 - [leweohlsen](https://github.com/leweohlsen)
 - [sroze](https://github.com/sroze)
 - [justin-hackin](https://github.com/justin-hackin)
+- [Hydroxycarbamide](https://github.com/Hydroxycarbamide)
